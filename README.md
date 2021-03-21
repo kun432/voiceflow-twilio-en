@@ -4,6 +4,13 @@ demo for node.js/express server for running a Twilio IVR chatbot with Voiceflow 
 
 ![](public/twilio-studio.png)
 
+## Prerequisites
+
+- node.js envrionment
+- ngrok
+- Twilio account
+  - For getting a phone number, you may need to submit informations for identity to Twilio in advanced. See https://www.twilio.com/guidelines/regulatory
+
 ## Usage
 
 Clone this repository.
