@@ -1,0 +1,188 @@
+{
+  "description": "VF_SDK_SAMPLE",
+  "states": [
+    {
+      "name": "Trigger",
+      "type": "trigger",
+      "transitions": [
+        {
+          "event": "incomingMessage"
+        },
+        {
+          "next": "defaults",
+          "event": "incomingCall"
+        },
+        {
+          "event": "incomingRequest"
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": 70,
+          "y": -80
+        }
+      }
+    },
+    {
+      "name": "VF_API",
+      "type": "make-http-request",
+      "transitions": [
+        {
+          "next": "VF_REPLY",
+          "event": "success"
+        },
+        {
+          "event": "failed"
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": 40,
+          "y": 370
+        },
+        "method": "POST",
+        "content_type": "application/json;charset=utf-8",
+        "body": "{\"userId\":\"{{flow.variables.userId}}\",\"userInput\": \"{{widgets.TALK.SpeechResult}}\"}",
+        "url": "{{flow.variables.ngrok_url}}/voice"
+      }
+    },
+    {
+      "name": "TALK",
+      "type": "gather-input-on-call",
+      "transitions": [
+        {
+          "event": "keypress"
+        },
+        {
+          "next": "VF_API",
+          "event": "speech"
+        },
+        {
+          "event": "timeout"
+        }
+      ],
+      "properties": {
+        "voice": "default",
+        "speech_timeout": "auto",
+        "offset": {
+          "x": -450,
+          "y": 730
+        },
+        "loop": 1,
+        "finish_on_key": "#",
+        "say": "{{flow.variables.message}}",
+        "language": "en-US",
+        "stop_gather": true,
+        "gather_language": "en-US",
+        "profanity_filter": "true",
+        "timeout": 5
+      }
+    },
+    {
+      "name": "VF_REPLY",
+      "type": "set-variables",
+      "transitions": [
+        {
+          "next": "split_1",
+          "event": "next"
+        }
+      ],
+      "properties": {
+        "variables": [
+          {
+            "value": "{{widgets.VF_API.parsed.userId}}",
+            "key": "userId"
+          },
+          {
+            "value": "{{widgets.VF_API.parsed.message}}",
+            "key": "message"
+          },
+          {
+            "value": "{{widgets.VF_API.parsed.isEnd}}",
+            "key": "isEnd"
+          }
+        ],
+        "offset": {
+          "x": 50,
+          "y": 630
+        }
+      }
+    },
+    {
+      "name": "split_1",
+      "type": "split-based-on",
+      "transitions": [
+        {
+          "next": "TALK",
+          "event": "noMatch"
+        },
+        {
+          "next": "end",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 1",
+              "arguments": [
+                "{{widgets.VF_API.parsed.isEnd}}"
+              ],
+              "type": "equal_to",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "input": "{{widgets.VF_API.parsed.isEnd}}",
+        "offset": {
+          "x": -100,
+          "y": 970
+        }
+      }
+    },
+    {
+      "name": "end",
+      "type": "say-play",
+      "transitions": [
+        {
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "voice": "default",
+        "offset": {
+          "x": 350,
+          "y": 1210
+        },
+        "loop": 1,
+        "say": "{{flow.variables.message}}",
+        "language": "en-US"
+      }
+    },
+    {
+      "name": "defaults",
+      "type": "set-variables",
+      "transitions": [
+        {
+          "next": "VF_API",
+          "event": "next"
+        }
+      ],
+      "properties": {
+        "variables": [
+          {
+            "value": "https://XXXXXXXXXXXX.ngrok.io",
+            "key": "ngrok_url"
+          }
+        ],
+        "offset": {
+          "x": 110,
+          "y": 130
+        }
+      }
+    }
+  ],
+  "initial_state": "Trigger",
+  "flags": {
+    "allow_concurrent_calls": true
+  }
+}

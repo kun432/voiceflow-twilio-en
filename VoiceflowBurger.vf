@@ -1,0 +1,837 @@
+{
+  "project": {
+    "_id": "604ccac3f328d8001dcbc7ad",
+    "name": "Voiceflow Burger",
+    "teamID": "4DjZPGaEmb",
+    "devVersion": "604ccac3f328d8001dcbc7ae",
+    "platform": "general",
+    "platformData": {
+      "invocationName": "template project general"
+    },
+    "members": [],
+    "image": "",
+    "creatorID": 405,
+    "privacy": "private",
+    "prototype": {
+      "nlp": {
+        "type": "LUIS",
+        "appID": "40b8bacd-ff04-43aa-b7e4-fa32049d9b49"
+      },
+      "data": {},
+      "trainedModel": {
+        "intents": [
+          {
+            "key": "VF.YES",
+            "name": "VF.YES",
+            "inputs": [
+              {
+                "text": "yes"
+              },
+              {
+                "text": "yea"
+              },
+              {
+                "text": "ok"
+              },
+              {
+                "text": "okay"
+              },
+              {
+                "text": "yup"
+              },
+              {
+                "text": "ya"
+              },
+              {
+                "text": "sure"
+              }
+            ]
+          },
+          {
+            "key": "wkd34mh",
+            "name": "order_burger",
+            "slots": [
+              {
+                "id": "sdh34f9",
+                "dialog": {
+                  "prompt": [
+                    {
+                      "text": "The size is missing, please specify the size.",
+                      "slots": []
+                    }
+                  ],
+                  "confirm": [
+                    {
+                      "text": "",
+                      "slots": []
+                    }
+                  ],
+                  "utterances": [
+                    {
+                      "text": "I would prefer a {{[size].sdh34f9}}",
+                      "slots": [
+                        "sdh34f9"
+                      ]
+                    },
+                    {
+                      "text": "A {{[size].sdh34f9}}  sounds nice, could have that?",
+                      "slots": [
+                        "sdh34f9"
+                      ]
+                    },
+                    {
+                      "text": "I would like a {{[size].sdh34f9}}",
+                      "slots": [
+                        "sdh34f9"
+                      ]
+                    },
+                    {
+                      "text": "{{[size].sdh34f9}}",
+                      "slots": [
+                        "sdh34f9"
+                      ]
+                    }
+                  ],
+                  "confirmEnabled": false
+                },
+                "required": true
+              },
+              {
+                "id": "f7l349j",
+                "dialog": {
+                  "prompt": [
+                    {
+                      "text": "The burger is missing, please specify the burger",
+                      "slots": []
+                    }
+                  ],
+                  "confirm": [
+                    {
+                      "text": "",
+                      "slots": []
+                    }
+                  ],
+                  "utterances": [
+                    {
+                      "text": "I'm feeling a {{[burger].f7l349j}}  today",
+                      "slots": [
+                        "f7l349j"
+                      ]
+                    },
+                    {
+                      "text": "I'd like a {{[burger].f7l349j}}  please",
+                      "slots": [
+                        "f7l349j"
+                      ]
+                    },
+                    {
+                      "text": "A {{[burger].f7l349j}}  please",
+                      "slots": [
+                        "f7l349j"
+                      ]
+                    }
+                  ],
+                  "confirmEnabled": false
+                },
+                "required": true
+              }
+            ],
+            "inputs": [
+              {
+                "text": "I would like a {{[size].sdh34f9}} {{[burger].f7l349j}}",
+                "slots": [
+                  "sdh34f9",
+                  "f7l349j"
+                ]
+              },
+              {
+                "text": "I would like a {{[burger].f7l349j}}",
+                "slots": [
+                  "f7l349j"
+                ]
+              },
+              {
+                "text": "I would like a {{[size].sdh34f9}}",
+                "slots": [
+                  "sdh34f9"
+                ]
+              }
+            ]
+          }
+        ],
+        "slots": [
+          {
+            "key": "sdh34f9",
+            "name": "size",
+            "type": {
+              "value": "Custom"
+            },
+            "color": "#A086C4",
+            "inputs": [
+              "large",
+              "small",
+              "medum"
+            ]
+          },
+          {
+            "key": "f7l349j",
+            "name": "burger",
+            "type": {
+              "value": "Custom"
+            },
+            "color": "#4FA9B3",
+            "inputs": [
+              "cheeseburger",
+              "hamburger"
+            ]
+          }
+        ]
+      },
+      "lastTrainedTime": 1615646299004
+    }
+  },
+  "version": {
+    "_id": "604ccac3f328d8001dcbc7ae",
+    "name": "Initial Version",
+    "projectID": "604ccac3f328d8001dcbc7ad",
+    "variables": [
+      "sessions",
+      "user_id",
+      "timestamp",
+      "platform",
+      "locale"
+    ],
+    "platformData": {
+      "slots": [
+        {
+          "key": "sdh34f9",
+          "name": "size",
+          "type": {
+            "value": "Custom"
+          },
+          "color": "#A086C4",
+          "inputs": [
+            "large",
+            "small",
+            "medum"
+          ]
+        },
+        {
+          "key": "f7l349j",
+          "name": "burger",
+          "type": {
+            "value": "Custom"
+          },
+          "color": "#4FA9B3",
+          "inputs": [
+            "cheeseburger",
+            "hamburger"
+          ]
+        }
+      ],
+      "intents": [
+        {
+          "key": "wkd34mh",
+          "name": "order_burger",
+          "slots": [
+            {
+              "id": "sdh34f9",
+              "dialog": {
+                "prompt": [
+                  {
+                    "text": "The size is missing, please specify the size.",
+                    "slots": []
+                  }
+                ],
+                "confirm": [
+                  {
+                    "text": "",
+                    "slots": []
+                  }
+                ],
+                "utterances": [
+                  {
+                    "text": "I would prefer a {{[size].sdh34f9}} ",
+                    "slots": [
+                      "sdh34f9"
+                    ]
+                  },
+                  {
+                    "text": "A {{[size].sdh34f9}}  sounds nice, could have that?",
+                    "slots": [
+                      "sdh34f9"
+                    ]
+                  },
+                  {
+                    "text": "I would like a {{[size].sdh34f9}} ",
+                    "slots": [
+                      "sdh34f9"
+                    ]
+                  },
+                  {
+                    "text": "{{[size].sdh34f9}} ",
+                    "slots": [
+                      "sdh34f9"
+                    ]
+                  }
+                ],
+                "confirmEnabled": false
+              },
+              "required": true
+            },
+            {
+              "id": "f7l349j",
+              "dialog": {
+                "prompt": [
+                  {
+                    "text": "The burger is missing, please specify the burger",
+                    "slots": []
+                  }
+                ],
+                "confirm": [
+                  {
+                    "text": "",
+                    "slots": []
+                  }
+                ],
+                "utterances": [
+                  {
+                    "text": "I'm feeling a {{[burger].f7l349j}}  today",
+                    "slots": [
+                      "f7l349j"
+                    ]
+                  },
+                  {
+                    "text": "I'd like a {{[burger].f7l349j}}  please",
+                    "slots": [
+                      "f7l349j"
+                    ]
+                  },
+                  {
+                    "text": "A {{[burger].f7l349j}}  please",
+                    "slots": [
+                      "f7l349j"
+                    ]
+                  }
+                ],
+                "confirmEnabled": false
+              },
+              "required": true
+            }
+          ],
+          "inputs": [
+            {
+              "text": "I would like a {{[size].sdh34f9}} {{[burger].f7l349j}}",
+              "slots": [
+                "sdh34f9",
+                "f7l349j"
+              ]
+            },
+            {
+              "text": "I would like a {{[burger].f7l349j}}",
+              "slots": [
+                "f7l349j"
+              ]
+            },
+            {
+              "text": "I would like a {{[size].sdh34f9}}",
+              "slots": [
+                "sdh34f9"
+              ]
+            }
+          ]
+        }
+      ],
+      "settings": {
+        "restart": true,
+        "repeat": 100,
+        "locales": [
+          "en-US"
+        ]
+      },
+      "publishing": {},
+      "platform": "general"
+    },
+    "rootDiagramID": "604ccac3f328d8001dcbc7af",
+    "creatorID": 405,
+    "prototype": {
+      "data": {
+        "name": "Voiceflow Burger",
+        "locales": [
+          "en-US"
+        ]
+      },
+      "model": {
+        "intents": [
+          {
+            "key": "VF.YES",
+            "name": "VF.YES",
+            "inputs": [
+              {
+                "text": "yes"
+              },
+              {
+                "text": "yea"
+              },
+              {
+                "text": "ok"
+              },
+              {
+                "text": "okay"
+              },
+              {
+                "text": "yup"
+              },
+              {
+                "text": "ya"
+              },
+              {
+                "text": "sure"
+              }
+            ]
+          },
+          {
+            "key": "wkd34mh",
+            "name": "order_burger",
+            "slots": [
+              {
+                "id": "sdh34f9",
+                "dialog": {
+                  "prompt": [
+                    {
+                      "text": "The size is missing, please specify the size.",
+                      "slots": []
+                    }
+                  ],
+                  "confirm": [
+                    {
+                      "text": "",
+                      "slots": []
+                    }
+                  ],
+                  "utterances": [
+                    {
+                      "text": "I would prefer a {{[size].sdh34f9}}",
+                      "slots": [
+                        "sdh34f9"
+                      ]
+                    },
+                    {
+                      "text": "A {{[size].sdh34f9}}  sounds nice, could have that?",
+                      "slots": [
+                        "sdh34f9"
+                      ]
+                    },
+                    {
+                      "text": "I would like a {{[size].sdh34f9}}",
+                      "slots": [
+                        "sdh34f9"
+                      ]
+                    },
+                    {
+                      "text": "{{[size].sdh34f9}}",
+                      "slots": [
+                        "sdh34f9"
+                      ]
+                    }
+                  ],
+                  "confirmEnabled": false
+                },
+                "required": true
+              },
+              {
+                "id": "f7l349j",
+                "dialog": {
+                  "prompt": [
+                    {
+                      "text": "The burger is missing, please specify the burger",
+                      "slots": []
+                    }
+                  ],
+                  "confirm": [
+                    {
+                      "text": "",
+                      "slots": []
+                    }
+                  ],
+                  "utterances": [
+                    {
+                      "text": "I'm feeling a {{[burger].f7l349j}}  today",
+                      "slots": [
+                        "f7l349j"
+                      ]
+                    },
+                    {
+                      "text": "I'd like a {{[burger].f7l349j}}  please",
+                      "slots": [
+                        "f7l349j"
+                      ]
+                    },
+                    {
+                      "text": "A {{[burger].f7l349j}}  please",
+                      "slots": [
+                        "f7l349j"
+                      ]
+                    }
+                  ],
+                  "confirmEnabled": false
+                },
+                "required": true
+              }
+            ],
+            "inputs": [
+              {
+                "text": "I would like a {{[size].sdh34f9}} {{[burger].f7l349j}}",
+                "slots": [
+                  "sdh34f9",
+                  "f7l349j"
+                ]
+              },
+              {
+                "text": "I would like a {{[burger].f7l349j}}",
+                "slots": [
+                  "f7l349j"
+                ]
+              },
+              {
+                "text": "I would like a {{[size].sdh34f9}}",
+                "slots": [
+                  "sdh34f9"
+                ]
+              }
+            ]
+          }
+        ],
+        "slots": [
+          {
+            "key": "sdh34f9",
+            "name": "size",
+            "type": {
+              "value": "Custom"
+            },
+            "color": "#A086C4",
+            "inputs": [
+              "large",
+              "small",
+              "medum"
+            ]
+          },
+          {
+            "key": "f7l349j",
+            "name": "burger",
+            "type": {
+              "value": "Custom"
+            },
+            "color": "#4FA9B3",
+            "inputs": [
+              "cheeseburger",
+              "hamburger"
+            ]
+          }
+        ]
+      },
+      "context": {
+        "stack": [
+          {
+            "storage": {},
+            "variables": {},
+            "programID": "604ccac3f328d8001dcbc7af"
+          }
+        ]
+      },
+      "settings": {}
+    }
+  },
+  "diagrams": {
+    "604ccac3f328d8001dcbc7af": {
+      "_id": "604ccac3f328d8001dcbc7af",
+      "offsetX": -57.58569533942064,
+      "offsetY": 53.25556603600121,
+      "zoom": 80,
+      "nodes": {
+        "start00000000000000000000": {
+          "nodeID": "start00000000000000000000",
+          "type": "start",
+          "coords": [
+            288.75,
+            112.5
+          ],
+          "data": {
+            "name": "Start",
+            "color": "standard",
+            "ports": [
+              {
+                "type": "",
+                "target": "60216838334555678f8370be",
+                "id": "602167fd334555678f8370bb"
+              }
+            ],
+            "steps": []
+          }
+        },
+        "60216838334555678f8370be": {
+          "nodeID": "60216838334555678f8370be",
+          "type": "speak",
+          "data": {
+            "randomize": false,
+            "dialogs": [
+              {
+                "voice": "default",
+                "content": "Welcome to Voiceflow Burger. "
+              }
+            ],
+            "ports": [
+              {
+                "type": "",
+                "target": "60216852334555678f8370ca",
+                "id": "60216838334555678f8370c0"
+              }
+            ]
+          }
+        },
+        "60216838334555678f8370c1": {
+          "nodeID": "60216838334555678f8370c1",
+          "type": "block",
+          "coords": [
+            745.25,
+            112.00000000000003
+          ],
+          "data": {
+            "name": "Entry Flow",
+            "color": "red",
+            "steps": [
+              "60216838334555678f8370be",
+              "60216852334555678f8370ca",
+              "6021685e334555678f8370d2"
+            ]
+          }
+        },
+        "60216852334555678f8370ca": {
+          "nodeID": "60216852334555678f8370ca",
+          "type": "speak",
+          "data": {
+            "randomize": false,
+            "dialogs": [
+              {
+                "voice": "default",
+                "content": "What would you like to order today?"
+              }
+            ],
+            "ports": [
+              {
+                "type": "",
+                "target": "6021685e334555678f8370d2",
+                "id": "60216852334555678f8370cd"
+              }
+            ]
+          }
+        },
+        "6021685e334555678f8370d2": {
+          "nodeID": "6021685e334555678f8370d2",
+          "type": "prompt",
+          "data": {
+            "ports": [],
+            "reprompt": null,
+            "noMatches": {
+              "randomize": true,
+              "reprompts": [
+                {
+                  "voice": "default",
+                  "content": "Sorry I didn't catch that."
+                },
+                {
+                  "voice": "default",
+                  "content": "Could you repeat that?"
+                },
+                {
+                  "voice": "default",
+                  "content": "I'm not sure I understand that."
+                }
+              ]
+            },
+            "chips": null
+          }
+        },
+        "6021687d334555678f8370d7": {
+          "nodeID": "6021687d334555678f8370d7",
+          "type": "intent",
+          "data": {
+            "intent": "wkd34mh",
+            "mappings": [],
+            "ports": [
+              {
+                "type": "",
+                "target": "602168e8334555678f8370df",
+                "id": "6021687d334555678f8370d8"
+              }
+            ]
+          }
+        },
+        "6021687d334555678f8370d9": {
+          "nodeID": "6021687d334555678f8370d9",
+          "type": "block",
+          "coords": [
+            749,
+            -62.99999999999997
+          ],
+          "data": {
+            "name": "Order flow",
+            "color": "green",
+            "steps": [
+              "6021687d334555678f8370d7"
+            ]
+          }
+        },
+        "602168e8334555678f8370df": {
+          "nodeID": "602168e8334555678f8370df",
+          "type": "speak",
+          "data": {
+            "randomize": false,
+            "dialogs": [
+              {
+                "voice": "default",
+                "content": "You have ordered a {{[size].size}} {{[burger].burger}}."
+              }
+            ],
+            "ports": [
+              {
+                "type": "",
+                "target": "602168fe334555678f8370ed",
+                "id": "602168e8334555678f8370e1"
+              }
+            ]
+          }
+        },
+        "602168e8334555678f8370e2": {
+          "nodeID": "602168e8334555678f8370e2",
+          "type": "block",
+          "coords": [
+            1218,
+            -69.75000000000001
+          ],
+          "data": {
+            "name": "Order Flow Result",
+            "color": "blue",
+            "steps": [
+              "602168e8334555678f8370df"
+            ]
+          }
+        },
+        "602168fe334555678f8370ea": {
+          "nodeID": "602168fe334555678f8370ea",
+          "type": "speak",
+          "data": {
+            "randomize": false,
+            "dialogs": [
+              {
+                "voice": "default",
+                "content": "Would you like to order something else?"
+              }
+            ],
+            "ports": [
+              {
+                "type": "",
+                "target": "60216911334555678f8370f6",
+                "id": "602168fe334555678f8370ec"
+              }
+            ]
+          }
+        },
+        "602168fe334555678f8370ed": {
+          "nodeID": "602168fe334555678f8370ed",
+          "type": "block",
+          "coords": [
+            1228,
+            117.74999999999997
+          ],
+          "data": {
+            "name": "Restart?",
+            "color": "blue",
+            "steps": [
+              "602168fe334555678f8370ea",
+              "60216911334555678f8370f6"
+            ]
+          }
+        },
+        "60216911334555678f8370f6": {
+          "nodeID": "60216911334555678f8370f6",
+          "type": "interaction",
+          "data": {
+            "name": "Choice",
+            "else": {
+              "type": "path",
+              "randomize": false,
+              "reprompts": [
+                {
+                  "voice": "default",
+                  "content": ""
+                }
+              ]
+            },
+            "choices": [
+              {
+                "intent": "VF.YES",
+                "mappings": []
+              }
+            ],
+            "reprompt": null,
+            "chips": null,
+            "ports": [
+              {
+                "type": "",
+                "target": "604ccf148818a164afdd05e2",
+                "id": "60216911334555678f8370f9"
+              },
+              {
+                "type": "",
+                "target": "60216838334555678f8370c1",
+                "id": "60216911334555678f8370fa"
+              }
+            ]
+          }
+        },
+        "604ccf148818a164afdd05df": {
+          "nodeID": "604ccf148818a164afdd05df",
+          "type": "speak",
+          "data": {
+            "randomize": false,
+            "dialogs": [
+              {
+                "voice": "default",
+                "content": "Goodbye!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "",
+                "target": null,
+                "id": "604ccf148818a164afdd05e1"
+              }
+            ]
+          }
+        },
+        "604ccf148818a164afdd05e2": {
+          "nodeID": "604ccf148818a164afdd05e2",
+          "type": "block",
+          "coords": [
+            1390.4821191742758,
+            493.4305424549985
+          ],
+          "data": {
+            "name": "Block",
+            "color": "standard",
+            "steps": [
+              "604ccf148818a164afdd05df"
+            ]
+          }
+        }
+      },
+      "variables": [],
+      "children": [],
+      "name": "ROOT",
+      "versionID": "604ccac3f328d8001dcbc7ae",
+      "creatorID": 405,
+      "modified": 1616306541
+    }
+  }
+}
