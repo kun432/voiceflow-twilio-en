@@ -1,5 +1,11 @@
 # voiceflow-twilio-en
 
+# **This repository has been archived **
+
+**This repository has been archived because Voiceflow SDK has been replaced with Dialog Management API and obsoleted now. These codes may not work. (I heard that a New SDK suitable for Dialog Management API will be released in future.) **
+
+## About
+
 demo for node.js/express server for running a Twilio IVR chatbot with Voiceflow SDK.
 
 ![](public/twilio-studio.png)
